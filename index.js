@@ -92,7 +92,7 @@ var finances = [
 var numberOfMonths = finances.length;
 
 // This displays the text Financial Analysis
-console.log("Financial Analysis" + "\n------------------");
+console.log("\n------------------" + "\nFinancial Analysis" + "\n------------------");
 
 //Total Number of Months
 console.log("Total Months: " + numberOfMonths);
