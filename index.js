@@ -167,5 +167,34 @@ console.log(
     ")"
 );
 /*********************************************************************************/
+//Calculating the greatest Decrease in Profit of losses
+var greatestDecrease = 0;
+var greatestDecreaseMonth = "";
 
+// Loop through the array starting from the second element
+for (var i = 1; i < finances.length; i++) {
+  // Access the profit/loss values for the current and previous months
+  const currentMonthValue = finances[i][1];
+  const previousMonthValue = finances[i - 1][1];
+
+  // Calculate the monthly change
+  const monthlyChange = currentMonthValue - previousMonthValue;
+
+  // Update the greatestIncrease and greatestIncreaseMonth if a new maximum is found
+  if (monthlyChange < greatestDecrease) {
+    greatestDecrease = monthlyChange;
+    greatestDecreaseMonth = finances[i][0]; // Store the corresponding month
+  }
+}
+
+// Output the result
+console.log(
+  "Greatest Decrease in Profits/Losses: " +
+    greatestDecreaseMonth +
+    " " +
+    "($" +
+    greatestDecrease +
+    ")"
+);
+/*****
 /*********************************************************************************/
