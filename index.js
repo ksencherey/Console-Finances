@@ -137,7 +137,35 @@ roundedUpAverage = averageChange.toFixed(2);
 // Output the result
 console.log("Average Change: ", roundedUpAverage);
 /*********************************************************************************/
+//Calculating the greatest increase in Profit of losses
+var greatestIncrease = 0;
+var greatestIncreaseMonth = "";
 
+// Loop through the array starting from the second element
+for (var i = 1; i < finances.length; i++) {
+  // Access the profit/loss values for the current and previous months
+  const currentMonthValue = finances[i][1];
+  const previousMonthValue = finances[i - 1][1];
+
+  // Calculate the monthly change
+  const monthlyChange = currentMonthValue - previousMonthValue;
+
+  // Update the greatestIncrease and greatestIncreaseMonth if a new maximum is found
+  if (monthlyChange > greatestIncrease) {
+    greatestIncrease = monthlyChange;
+    greatestIncreaseMonth = finances[i][0]; // Store the corresponding month
+  }
+}
+
+// Output the result
+console.log(
+  "Greatest Increase in Profits/Losses: " +
+    greatestIncreaseMonth +
+    " " +
+    "($" +
+    greatestIncrease +
+    ")"
+);
 /*********************************************************************************/
 
 /*********************************************************************************/
