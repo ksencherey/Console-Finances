@@ -86,3 +86,14 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+/*********************************************************************************/
+// Variable to extract the count of months in the finances array
+var numberOfMonths = finances.length;
+
+// This displays the text Financial Analysis
+console.log("Financial Analysis" + "\n------------------");
+
+//Total Number of Months
+console.log("Total Months: " + numberOfMonths);
+/*********************************************************************************/
