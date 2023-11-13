@@ -114,3 +114,30 @@ for (var i = 0; i < finances.length; i++) {
 }
 console.log("Total: " + total);
 /*********************************************************************************/
+//Average of Change
+let totalChange = 0;
+
+// Iterate through the array starting from the second element
+for (let i = 1; i < finances.length; i++) {
+  // Access the profit/loss values for the current and previous months
+  const currentMonthValue = finances[i][1];
+  const previousMonthValue = finances[i - 1][1];
+
+  // Calculate the monthly change and add it to the total change
+  const monthlyChange = currentMonthValue - previousMonthValue;
+  totalChange += monthlyChange;
+}
+
+// Calculate the average change
+const averageChange = totalChange / (finances.length - 1);
+
+//Round up the averageChange to 2 decimal places
+roundedUpAverage = averageChange.toFixed(2);
+
+// Output the result
+console.log("Average Change: ", roundedUpAverage);
+/*********************************************************************************/
+
+/*********************************************************************************/
+
+/*********************************************************************************/
